@@ -9,16 +9,37 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: int
         """
-        slow = fast = head
-        prev = None
 
-        while fast and fast.next:
-            fast = fast.next.next
-            slow.next, prev, slow = prev, slow, slow.next
+        # ye wala code bilkul sahi h 
+        # slow = fast = head
+        # prev = None
 
-        res = 0
-        while slow:
-            res = max(res, prev.val + slow.val)
-            prev, slow = prev.next, slow.next
+        # while fast and fast.next:
+        #     fast = fast.next.next
+        #     slow.next, prev, slow = prev, slow, slow.next
 
-        return res
+        # res = 0
+        # while slow:
+        #     res = max(res, prev.val + slow.val)
+        #     prev, slow = prev.next, slow.next
+
+        # return res
+
+        #easy approch but memory consuming
+        arr = []
+        while head:
+            arr.append(head.val)
+            head = head.next
+
+        left = 0
+        right = len(arr) - 1
+
+        ans = 0
+
+        while left < right:
+            ans = max(ans, arr[left] + arr[right])
+
+            left += 1
+            right -= 1
+
+        return ans
