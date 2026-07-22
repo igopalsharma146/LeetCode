@@ -4,10 +4,14 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        num=1
-        while num <= n:
-            if num == n:
-                return True
-            num *=4
-        return False
+        return (n & (n - 1)) == 0 and n % 3 == 1
+
+        # num=1
+        # while num <= n:
+        #     if num == n:
+        #         return True
+        #     num *=4
+        # return False
+
+        
             
