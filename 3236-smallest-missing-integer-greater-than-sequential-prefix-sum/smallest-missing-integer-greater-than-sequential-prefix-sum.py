@@ -14,7 +14,13 @@ class Solution(object):
                 break
             i += 1
         
-        while True:
-            if sum1 not in nums:
-                return sum1
-            sum1 += 1
+        nums.sort()
+        for num in nums:
+            if num == sum1:
+                sum1+=1
+        return sum1
+
+        # while True:
+        #     if sum1 not in nums:
+        #         return sum1
+        #     sum1 += 1
