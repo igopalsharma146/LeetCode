@@ -9,23 +9,23 @@ class Solution(object):
         :type lists: List[Optional[ListNode]]
         :rtype: Optional[ListNode]
         """
-        # if not lists:
-        #     return None
-        # if len(lists) == 1:
-        #     return lists[0]
-        
-        # mid = len(lists) // 2
-        # left = self.mergeKLists(lists[:mid])
-        # right = self.mergeKLists(lists[mid:])
-        # return self.merge(left, right)
-
         if not lists:
             return None
+        if len(lists) == 1:
+            return lists[0]
+        
+        mid = len(lists) // 2
+        left = self.mergeKLists(lists[:mid])
+        right = self.mergeKLists(lists[mid:])
+        return self.merge(left, right)
 
-        ans = None
-        for head in lists:
-            ans = self.merge(ans, head)
-        return ans
+        # if not lists:
+        #     return None
+
+        # ans = None
+        # for head in lists:
+        #     ans = self.merge(ans, head)
+        # return ans
         
     def merge(self,left,right):
         dummy=curr=ListNode(0)
