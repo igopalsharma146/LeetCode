@@ -6,8 +6,10 @@ class Solution(object):
         """
         res=[]
         i=1
+        prev=mountain[0]
         while i<len(mountain)-1:
-            if mountain[i-1] < mountain[i] > mountain[i+1]:
+            if prev < mountain[i] > mountain[i+1]:
                 res.append(i)
+            prev=mountain[i]
             i+=1
         return res
