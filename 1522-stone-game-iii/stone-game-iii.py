@@ -4,6 +4,7 @@ class Solution(object):
         :type stoneValue: List[int]
         :rtype: str
         """
+        #daily problem
         n = len(stoneValue)
         dp = [-10**18] * (n + 1)
         dp[n] = 0
@@ -18,7 +19,7 @@ class Solution(object):
 
         if dp[0] > 0:
             return "Alice"
-            
+
         if dp[0] < 0:
             return "Bob"
 
