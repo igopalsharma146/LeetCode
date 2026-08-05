@@ -6,6 +6,7 @@ class Solution(object):
         :type invocations: List[List[int]]
         :rtype: List[int]
         """
+        #daily problem
         edges = [[] for _ in range(n)]
         in_degree = [0] * n
 
