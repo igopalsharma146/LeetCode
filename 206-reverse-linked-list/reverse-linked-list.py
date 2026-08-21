@@ -29,6 +29,7 @@ class Solution:
         # return head
 
         # optimal solution
+        # esme hum arrow ki direction change kar rahe h 
         if head is None or head.next is None:
             return head
         d=None
