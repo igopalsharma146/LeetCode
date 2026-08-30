@@ -10,18 +10,22 @@ class Solution(object):
         :type node: ListNode
         :rtype: void Do not return anything, modify node in-place instead.
         """
-        arr=[]
-        curr=node.next
-        while curr:
-            arr.append(curr.val)
-            curr=curr.next
+        node.val=node.next.val
+        node.next=node.next.next
 
-        curr,i=node,0
-        prev=None
-        while i<len(arr):
-            curr.val=arr[i]
-            prev=curr
-            curr=curr.next
-            i+=1
-        prev.next=None
+
+        # arr=[]
+        # curr=node.next
+        # while curr:
+        #     arr.append(curr.val)
+        #     curr=curr.next
+
+        # curr,i=node,0
+        # prev=None
+        # while i<len(arr):
+        #     curr.val=arr[i]
+        #     prev=curr
+        #     curr=curr.next
+        #     i+=1
+        # prev.next=None
         
