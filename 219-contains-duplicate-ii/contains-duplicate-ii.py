@@ -5,6 +5,14 @@ class Solution(object):
         :type k: int
         :rtype: bool
         """
+        # if len(nums)==len(set(nums)):
+        #     return False
+        # for i,n in enumerate(nums):
+        #     if n in nums[i+1:i+k+1]:
+        #         return True
+        # return False
+
+
         hset = {}
         for idx in range(len(nums)):
             if nums[idx] in hset and abs(idx - hset[nums[idx]]) <= k:
