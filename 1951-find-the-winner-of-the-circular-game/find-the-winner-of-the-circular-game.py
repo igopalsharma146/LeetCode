@@ -6,8 +6,7 @@ class Solution:
 
         i=0
         while len(l1) > 1:
-            e= (i+k-1) % len(l1)
-            l1.pop(e)
-            i=e
+            i= (i+k-1) % len(l1)
+            l1.pop(i)
         return l1[0]
                 
