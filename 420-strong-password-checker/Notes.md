@@ -1,0 +1,1 @@
+<h2>strong-password-checker Notes</h2><hr>[ Time taken: 2hrs 17m 58s ]
