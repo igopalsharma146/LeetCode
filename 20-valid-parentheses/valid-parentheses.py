@@ -1,23 +1,13 @@
-class Solution(object):
-    def isValid(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
-        n=len(s)
-        if n%2 != 0:
-            return False
-        else:
-            stack=[]
-            hash_map = {')': '(', ']': '[', '}': '{'}
-
-            for ch in s:
-                if ch in hash_map:
-                    if stack and stack[-1] == hash_map[ch]:
-                        stack.pop()
-                    else:
-                        return False
-                else:
-                    stack.append(ch)
-        # Return True if stack is empty, False otherwise
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack=[]
+        d1={')':'(',']':'[','}':'{'}
+        for ch in s:
+            if ch not in d1:
+                stack.append(ch)
+            elif stack and stack[-1]==d1[ch]:
+                stack.pop()
+            else:
+                return False
+        print(stack)
         return not stack
