@@ -1,7 +1,7 @@
 class Solution:
     def rob(self, nums: list[int]) -> int:
-        n=len(nums)-1
-        dp=[-1]*(n+1)
+        n=len(nums)
+        dp=[-1]*n
         def solve(index):
             if index==0:
                 return nums[index]
@@ -13,4 +13,4 @@ class Solution:
             not_pick=0+solve(index-1)
             dp[index]= max(pick,not_pick)
             return dp[index]
-        return solve(n)
+        return solve(n-1)
